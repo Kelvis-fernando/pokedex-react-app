@@ -16,8 +16,14 @@ import {
   Image,
 } from '@chakra-ui/react'
 import vulpix from '../assets/vulpix.svg'
+import { useEffect } from 'react'
+import { getPokemonsWithDetails } from '../services/pokemonService'
 
 const PokemonInfo = ({ isOpen, onClose }: ModalProps) => {
+  useEffect(() => {
+    getPokemonsWithDetails()
+  }, [])
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
