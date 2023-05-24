@@ -1,9 +1,10 @@
-import { Box, Text } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import Header from '../components/Header'
 
 const Home = () => {
   return (
     <Box>
-      <Text>Home</Text>
+      <Header />
     </Box>
   )
 }
