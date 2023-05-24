@@ -12,15 +12,17 @@ import pokemon from '../assets/vulpix.svg'
 
 const PokemonCard = ({ children, onClick, ...rest }: CardProps) => {
   return (
-    <Card maxW="md" boxShadow="2xl" m="5" onClick={onClick}>
-      <CardHeader display="flex" justifyContent="space-between">
-        <Text fontWeight="bold">Vulpix</Text>
-        <Text>#COD</Text>
+    <Card w="250px" boxShadow="2xl" m="5" onClick={onClick} cursor="pointer">
+      <CardHeader display="flex" justifyContent="space-around">
+        <Text fontWeight="bold" fontSize="larger">
+          Vulpix
+        </Text>
+        <Text fontSize="larger">#COD</Text>
       </CardHeader>
-      <CardBody>
-        <Image src={pokemon} alt="Pokemon" />
+      <CardBody display="flex" justifyContent="center">
+        <Image src={pokemon} alt="Pokemon" boxSize="150" />
       </CardBody>
-      <CardFooter justifyContent="space-between">
+      <CardFooter justifyContent="space-around">
         <Text
           p="1"
           backgroundColor="green.400"
