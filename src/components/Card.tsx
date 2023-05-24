@@ -10,9 +10,9 @@ import {
 } from '@chakra-ui/react'
 import pokemon from '../assets/vulpix.svg'
 
-const PokemonCard = ({ children, ...rest }: CardProps) => {
+const PokemonCard = ({ children, onClick, ...rest }: CardProps) => {
   return (
-    <Card maxW="md" boxShadow="2xl" m="5">
+    <Card maxW="md" boxShadow="2xl" m="5" onClick={onClick}>
       <CardHeader display="flex" justifyContent="space-between">
         <Text fontWeight="bold">Vulpix</Text>
         <Text>#COD</Text>

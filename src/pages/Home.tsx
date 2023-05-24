@@ -1,15 +1,17 @@
-import { Box, Heading, Flex } from '@chakra-ui/react'
+import { Box, Heading, Flex, useDisclosure, Button } from '@chakra-ui/react'
 import Header from '../components/Header'
 import PokemonCard from '../components/Card'
+import PokemonInfo from './PokemonInfo'
 
 const Home = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box>
       <Header />
       <Box p="10">
         <Heading>Pokédex</Heading>
         <Flex flexWrap="wrap" justifyContent="center">
-          <PokemonCard />
+          <PokemonCard onClick={onOpen} />
           <PokemonCard />
           <PokemonCard />
           <PokemonCard />
@@ -24,6 +26,7 @@ const Home = () => {
           <PokemonCard />
         </Flex>
       </Box>
+      <PokemonInfo isOpen={isOpen} onClose={onClose} children={undefined} />
     </Box>
   )
 }
