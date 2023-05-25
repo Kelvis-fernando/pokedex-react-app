@@ -42,6 +42,7 @@ const PokemonInfo = ({ isOpen, onClose, pokemonInfo }: PokemonInfoProps) => {
                     borderRadius="sm"
                     bg="gray"
                     fontWeight="bold"
+                    color="white"
                   >
                     {t.type.name.toUpperCase()}
                   </Text>
