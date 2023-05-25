@@ -27,7 +27,11 @@ const Home = () => {
         <Flex flexWrap="wrap" justifyContent="center">
           {pokemons &&
             pokemons.map(pokemon => (
-              <PokemonCard onClick={onOpen} pokemon={pokemon} />
+              <PokemonCard
+                key={pokemon.id}
+                onClick={onOpen}
+                pokemon={pokemon}
+              />
             ))}
         </Flex>
       </Box>

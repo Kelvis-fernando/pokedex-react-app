@@ -1,6 +1,8 @@
 import axios from 'axios'
-import { PokemonProps, PokemonResponseType } from '../types/PokemonResponse.types'
-
+import {
+  PokemonProps,
+  PokemonResponseType,
+} from '../types/PokemonResponse.types'
 
 const getPokemons = async (limit = 20) => {
   try {
@@ -21,9 +23,12 @@ export const getPokemonsWithDetails = async () => {
     response.map(async (item: PokemonProps) => {
       const { data } = await axios.get(item.url)
       const pokemon: PokemonResponseType = {
+        id: data.id,
         name: data.name,
         types: data.types,
         sprites: data.sprites,
+        height: data.height,
+        weight: data.weight,
       }
       pokemonDetails.push(pokemon)
     })
