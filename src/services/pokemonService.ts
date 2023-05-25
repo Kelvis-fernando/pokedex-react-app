@@ -26,6 +26,7 @@ export const getPokemonsWithDetails = async () => {
         id: data.id,
         name: data.name,
         types: data.types,
+        stats: data.stats,
         sprites: data.sprites,
         height: data.height,
         weight: data.weight,
