@@ -1,6 +1,8 @@
-import { BoxProps } from '@chakra-ui/react'
 import { ReactNode } from 'react'
+import { PokemonResponseType } from './PokemonResponse.types'
 
-export interface CardProps extends BoxProps {
+export interface PokemonCardProps {
   children?: ReactNode
+  onClick?: () => void
+  pokemon?: PokemonResponseType
 }

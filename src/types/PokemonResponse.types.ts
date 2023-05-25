@@ -1,9 +1,10 @@
 export interface PokemonResponseType {
   id: number
+  key: number
   types: object[]
   stats: object[]
   name: string
-  sprites: object
+  sprites: { front_default: string }
   weight: number
   height: number
 }

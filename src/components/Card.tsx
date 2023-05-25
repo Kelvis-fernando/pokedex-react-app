@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import {
   CardBody,
   CardFooter,
@@ -6,19 +6,18 @@ import {
   Text,
   Image,
   Card,
-  CardProps,
   Box,
   useDisclosure,
   useBreakpointValue,
 } from '@chakra-ui/react'
 import PokemonInfo from '../pages/PokemonInfo'
+import { PokemonCardProps } from '../types/Card.types'
 
 const PokemonCard = ({
   children,
   onClick,
   pokemon,
-  ...rest
-}: CardProps | any) => {
+}: PokemonCardProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const isMobile = useBreakpointValue({ base: true, md: false })
 
@@ -34,13 +33,13 @@ const PokemonCard = ({
         <Box onClick={onOpen}>
           <CardHeader display="flex" justifyContent="space-around">
             <Text fontWeight="bold" fontSize="larger">
-              {pokemon.name.toUpperCase()}
+              {pokemon!.name.toUpperCase()}
             </Text>
-            <Text fontSize="larger">#{pokemon.id}</Text>
+            <Text fontSize="larger">#{pokemon!.id}</Text>
           </CardHeader>
           <CardBody display="flex" justifyContent="center">
             <Image
-              src={pokemon.sprites.front_default}
+              src={pokemon!.sprites.front_default}
               alt="Pokemon"
               boxSize={isMobile ? '100%' : ''}
             />
@@ -48,11 +47,11 @@ const PokemonCard = ({
           <CardFooter justifyContent="space-around">
             <Box textAlign="center">
               <Text fontWeight="bold">Height</Text>
-              <Text>{pokemon.height}m</Text>
+              <Text>{pokemon!.height}m</Text>
             </Box>
             <Box textAlign="center">
               <Text fontWeight="bold">Weight</Text>
-              <Text>{pokemon.weight}</Text>
+              <Text>{pokemon!.weight}</Text>
             </Box>
           </CardFooter>
         </Box>

@@ -33,6 +33,7 @@ export const getPokemonsWithDetails = async (limit?: number) => {
       const { data } = await axios.get(item.url)
       const pokemon: PokemonResponseType = {
         id: data.id,
+        key: data.id,
         name: data.name,
         types: data.types,
         stats: data.stats,
