@@ -7,7 +7,7 @@ const Home = () => {
   const { sortedPokemons, serachResult, setSearchResult } = useHome()
 
   return (
-    <Box>
+    <Flex flexDirection="column" justifyContent="center">
       <Header setSearchResult={setSearchResult} />
       <Box p="10">
         <Heading>Pokédex</Heading>
@@ -22,7 +22,7 @@ const Home = () => {
           )}
         </Flex>
       </Box>
-    </Box>
+    </Flex>
   )
 }
 

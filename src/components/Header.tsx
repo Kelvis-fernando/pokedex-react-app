@@ -6,6 +6,7 @@ import {
   Image,
   Input,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react'
 import banner1 from '../assets/banner-1.svg'
 import banner2 from '../assets/banner-2.svg'
@@ -15,6 +16,7 @@ import { searchPokemons } from '../services/pokemonService'
 
 const Header = ({ setSearchResult }: any) => {
   const [searchInput, setSearchInput] = useState('')
+  const isMobile = useBreakpointValue({ base: true, md: false })
   let typingTimeout: NodeJS.Timeout | null = null
 
   const fetchData = async () => {
@@ -40,7 +42,11 @@ const Header = ({ setSearchResult }: any) => {
   }, [searchInput, setSearchResult])
 
   return (
-    <Flex display="flex" alignItems="center" justifyContent="space-around">
+    <Flex
+      display="flex"
+      alignItems="center"
+      justifyContent={isMobile ? 'center' : 'space-around'}
+    >
       <Box>
         <Heading textAlign="center">
           Explore o mundo dos <Text color="salmon">Pokémons</Text>
@@ -52,7 +58,7 @@ const Header = ({ setSearchResult }: any) => {
           <Input
             placeholder="Search for a pokemon..."
             boxShadow="lg"
-            w="sm"
+            w="100%"
             onChange={event => setSearchInput(event.target.value)}
           />
           <Button
@@ -67,7 +73,7 @@ const Header = ({ setSearchResult }: any) => {
           </Button>
         </Flex>
       </Box>
-      <Flex alignItems="center">
+      <Flex display={isMobile ? 'none' : 'flex'} alignItems="center">
         <Image src={banner1} alt="Pokemon Banner" height={350} width={200} />
         <Image
           src={banner2}
