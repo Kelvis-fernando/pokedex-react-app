@@ -15,8 +15,8 @@ const getPokemons = async (limit = 20) => {
   }
 }
 
-export const getPokemonsWithDetails = async () => {
-  const response = await getPokemons()
+export const getPokemonsWithDetails = async (limit?: number) => {
+  const response = await getPokemons(limit)
   const pokemonDetails: PokemonResponseType[] = []
 
   await Promise.all(
