@@ -6,40 +6,15 @@ import {
   Image,
   Input,
   Text,
-  useBreakpointValue,
 } from '@chakra-ui/react'
 import banner1 from '../assets/banner-1.svg'
 import banner2 from '../assets/banner-2.svg'
 import banner3 from '../assets/banner-3.svg'
-import { useState, useEffect } from 'react'
-import { searchPokemons } from '../services/pokemonService'
+import useHeader from '../hooks/useHeader'
+import { HeaderProps } from '../types/Header.types'
 
-const Header = ({ setSearchResult }: any) => {
-  const [searchInput, setSearchInput] = useState('')
-  const isMobile = useBreakpointValue({ base: true, md: false })
-  let typingTimeout: NodeJS.Timeout | null = null
-
-  const fetchData = async () => {
-    if (searchInput.toLowerCase().length >= 1) {
-      setSearchResult(await searchPokemons(searchInput.toLowerCase()))
-    }
-  }
-
-  useEffect(() => {
-    if (typingTimeout) {
-      clearTimeout(typingTimeout)
-    }
-
-    typingTimeout = setTimeout(() => {
-      fetchData()
-    }, 1000)
-
-    return () => {
-      if (typingTimeout) {
-        clearTimeout(typingTimeout)
-      }
-    }
-  }, [searchInput, setSearchResult])
+const Header = ({ setSearchResult }: HeaderProps) => {
+  const { setSearchInput, isMobile, fetchData } = useHeader({ setSearchResult })
 
   return (
     <Flex
