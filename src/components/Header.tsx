@@ -49,15 +49,28 @@ const Header = ({ setSearchResult }: HeaderProps) => {
         </Flex>
       </Box>
       <Flex display={isMobile ? 'none' : 'flex'} alignItems="center">
-        <Image src={banner1} alt="Pokemon Banner" height={350} width={200} />
+        <Image
+          src={banner1}
+          alt="Pokemon Banner"
+          height="40%"
+          width="60%"
+          minW="30%"
+        />
         <Image
           src={banner2}
           marginTop={10}
           alt="Pokemon Banner"
-          height={350}
-          width={200}
+          height="40%"
+          width="60%"
+          minW="30%"
         />
-        <Image src={banner3} alt="Pokemon Banner" height={350} width={200} />
+        <Image
+          src={banner3}
+          alt="Pokemon Banner"
+          height="40%"
+          width="60%"
+          minW="30%"
+        />
       </Flex>
     </Flex>
   )
