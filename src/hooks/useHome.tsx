@@ -4,6 +4,7 @@ import { PokemonResponseType } from '../types/PokemonResponse.types'
 
 const useHome = () => {
   const [pokemons, setPokemonsResponse] = useState<PokemonResponseType[]>()
+  const [serachResult, setSearchResult] = useState()
   let [cardsToShow, setCardsToShow] = useState(20)
 
   const getPokemonData = async (limit: number) => {
@@ -32,7 +33,7 @@ const useHome = () => {
   }, [])
 
   const sortedPokemons = pokemons?.sort((a, b) => a.id - b.id)
-  return { sortedPokemons }
+  return { sortedPokemons, serachResult, setSearchResult }
 }
 
 export default useHome
