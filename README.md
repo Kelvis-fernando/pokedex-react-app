@@ -4,9 +4,7 @@
 
 ## - Consumido uma API REST de terceiros, e enviado para o front-end mostrar ao usuario;
 
-<img src="../../public/readme/foto1.png" width="400"> <img src="../../public/readme/foto2.png" width="400">
-
-![Deploy do projeto]('https://pokedex-react-app-three.vercel.app/')
+[Deploy do projeto](https://pokedex-react-app-three.vercel.app/)
 
 ## Project setup
 
